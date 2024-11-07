@@ -1,0 +1,184 @@
+{% load static %}
+<header class="header -type-9 js-header">
+  <div class="header__container container">
+    <div class="headerMobile__left">
+      {% comment %} <button class="header__menuBtn js-menu-button"><i class="icon-main-menu text-white"></i></button> {% endcomment %}
+    </div>
+
+    <div class="header__left">
+      <div class="header__logo">
+        <a href="{% url 'web:index' %}" class="header__logo"><img src="{% static 'web/img/general/logo-light.svg' %}" alt="logo icon" /></a>
+
+        <div class="xl:d-none ml-30">
+          <div class="desktopNav -light">
+            <div class="desktopNav__item">
+              <a href="{% url 'web:index' %}" class="{% if is_index %} nav-color {% endif %}">Home</a>
+            </div>
+
+            <div class="desktopNav__item">
+              <a href="{% url 'web:about_us' %}" class="{% if is_about %} nav-color {% endif %}">About</a>
+            </div>
+
+            <div class="headerDropdown lg:d-none js-form-dd">
+              <div class="desktopNav__item text-white" data-x-click="headerDestinations">
+                <a class="{% if is_hotels %} nav-color {% endif %}">
+                  Hotels <i class="icon-chevron-down"></i>
+                </a>
+              </div>
+            
+              <div class="headerDropdown__content" data-x="headerDestinations" data-x-toggle="is-active">
+                <div class="tabsMenu">
+                  <div class="tabsMenu__container">
+                    <div class="tabs js-tabs">
+                      <div class="tabsMenu__content">
+                        <div class="tabs__content js-tabs-content">
+                          <div class="row">
+                            {% for hotel_category in header_hotel_categories %}
+                            <div class="col-lg-4">
+                              <div class="tabsMenu-list">
+                                <div class="tabsMenu-list__title fw-900"><a href="{{hotel_category.get_absolute_url}}">{{ hotel_category.title }}</a></div>
+                                <div class="tabsMenu-list__content">
+                                  {% for hotel in hotel_category.get_hotels %}
+                                  <div class="tabsMenu-list__item">
+                                    <a href="{{ hotel.get_absolute_url }}"><i class="fa-solid fa-arrow-right arrow-icon"></i> {{ hotel.title }}</a>
+                                  </div>
+                                  {% endfor %}
+                                </div>
+                              </div>
+                            </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="desktopNav__item">
+              <a href="#" class="{% if is_gallery %} nav-color {% endif %}">Gallery <i class="icon-chevron-down"></i></a>
+
+              <div class="desktopNavSubnav">
+                <div class="desktopNavSubnav__content">
+                  <div class="desktopNavSubnav__item">
+                    <a href="{% url 'web:image_gallery' %}" class="{% if is_image_gallery %} nav-color {% endif %}">Image Gallery</a>
+                  </div>
+
+                  <div class="desktopNavSubnav__item">
+                    <a href="{% url 'web:video_gallery' %}" class="{% if is_video_gallery %} nav-color {% endif %}">Video Gallery</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="desktopNav__item">
+                <a href="{% url 'web:event' %}" class="{% if is_event %} nav-color {% endif %}">Events</a>
+              </div>
+
+              <div class="desktopNav__item">
+                <a href="{% url 'web:update' %}" class="{% if is_updates %} nav-color {% endif %}">Updates</a>
+              </div>
+
+              <div class="desktopNav__item">
+                <a href="{% url 'web:contact' %}" class="{% if is_contact %} nav-color {% endif %}">Contact</a>
+              </div>
+       
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="headerMobile__right">
+      <button class="header__menuBtn js-menu-button"><i class="icon-main-menu text-white"></i></button>
+
+      {% comment %} <button class="d-flex ml-20"><i class="icon-person text-18 text-white"></i></button> {% endcomment %}
+    </div>
+
+    <div class="header__right">
+      <button type="button"  class="button -sm -outline-white text-white rounded-200 ml-30 " data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
+    </div>
+  </div>
+</header>
+
+<div class="menu js-menu">
+  <div class="menu__overlay js-menu-button"></div>
+
+  <div class="menu__container">
+    <div class="menu__header">
+      <h4>Main Menu</h4>
+
+      <button class="js-menu-button"><i class="icon-cross text-10"></i></button>
+    </div>
+
+    <div class="menu__content">
+      <ul class="menuNav js-navList">
+
+        <li class="menuNav__item">
+          <a href="{% url 'web:index' %}">Home</a>
+        </li>
+
+        <li class="menuNav__item">
+          <a href="{% url 'web:about_us' %}">About</a>
+        </li>
+
+        <li class="menuNav__item -has-submenu js-has-submenu">
+          <a>
+            Hotels
+            <i class="icon-chevron-right"></i>
+          </a>
+
+          <ul class="submenu">
+            <li class="submenu__item js-nav-list-back">
+              <a>Back</a>
+            </li>
+            {% for hotel_category in header_hotel_categories %}
+            <li class="submenu__item">
+              <a href="{{hotel_category.get_absolute_url}}">{{hotel_category.title}}</a>
+            </li>
+            {% endfor %}
+      
+          </ul>
+        </li>
+
+
+        <li class="menuNav__item -has-submenu js-has-submenu">
+          <a>
+            Gallery
+            <i class="icon-chevron-right"></i>
+          </a>
+
+          <ul class="submenu">
+            <li class="submenu__item js-nav-list-back">
+              <a>Back</a>
+            </li>
+
+            <li class="submenu__item">
+              <a href="{% url 'web:image_gallery' %}">Image Gallery</a>
+            </li>
+
+            <li class="submenu__item">
+              <a href="{% url 'web:video_gallery' %}">Video Gallery</a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="menuNav__item">
+          <a href="{% url 'web:event' %}">Events</a>
+        </li>
+
+        <li class="menuNav__item">
+          <a href="{% url 'web:update' %}">Updates</a>
+        </li>
+
+        <li class="menuNav__item">
+          <a href="{% url 'web:contact' %}">Contact</a>
+        </li>
+      </ul>
+    </div>
+  
+  </div>
+</div>
+
+

@@ -1,0 +1,56 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+<section  class="pageHeader -type-2 -secondary custom-header">
+  <div class="pageHeader__bg">
+    <img src="{% static 'web/img/pageHeader/pageHeader-1.webp'%}" alt="image">
+  </div>
+
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12">
+        <div class="pageHeader__content">
+          <h1 class="pageHeader__title text-white">
+            News & Updates
+          </h1>
+
+          <p class="pageHeader__text text-white">
+            Stay Informed with the Latest from Greenleaves Holiday Homes.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class=" layout-pb-xl">
+      <div data-anim-wrap class="container">
+
+        <div  class="row y-gap-30 pt-40 sm:pt-20">
+        {% for update in updates %}
+          <div class="col-lg-4 col-md-6">
+            <a href="{{update.get_absolute_url}}" class="blogCard -type-1">
+              <div class="blogCard__image ratio ratio-41:30">
+                <img src="{{update.image.url}}" alt="image" class="img-ratio rounded-12">
+              </div>
+              <div class="blogCard__content mt-30">
+                <div class="blogCard__info text-14">
+                  <div class="lh-13">{{update.date}}</div>
+                  <div class="blogCard__line"></div>
+                  <div class="lh-13">{{update.auther}}</div>
+                </div>
+
+                <h3 class="blogCard__title text-18 fw-500 mt-10">{{update.title}}</h3>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+
+
+        </div>
+      </div>
+    </section>
+
+   {% endblock %}

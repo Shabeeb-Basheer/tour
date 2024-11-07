@@ -1,0 +1,369 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+    <section  class="hero -type-9 banner-section layout-pb-lg">
+      <div class="hero__slider js-section-slider" data-gap="0" data-slider-cols="xl-1 lg-1 md-1 sm-1 base-1" data-pagination="js-main-slider-pagination">
+        <div class="swiper-wrapper">
+        {% for banner in banners %}
+          <div class="swiper-slide">
+            <div class="hero__bg">
+              <img src="{{banner.image.url}}" alt="background">
+            </div>
+
+            <div class="container">
+              <div class="hero__content">
+                <div class="row items-center justify-between">
+                  <div class="col-xl-7 col-lg-8">
+
+                    <h1 class="hero__title text-white">
+                      {{ banner.title|slice:":19" }}<br class="lg:d-none">
+                      {{ banner.title|slice:"19:" }}
+                  </h1>
+                    <div class="hero__text text-white mt-10">
+                      {{banner.sub_title}}<br class="lg:d-none">
+                    </div>
+
+                    <div class="hero__button mt-30">
+                      <button class="button -md -outline-white text-white">
+                        <a href="{% url "web:contact" %}">
+                        Get In Touch
+                        <i class="icon-arrow-top-right ml-10"></i>
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+
+        <div class="container -pagination">
+          <div class="hero__pagination js-main-slider-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout-pt-lg layout-pb-lg pt-80">
+      <div data-anim-wrap class="container">
+        <div  class="row y-gap-15 justify-between items-end">
+          <div class="col-auto mt-5">
+            <h2 class="text-30 md:text-24">Our Branches</h2>
+          </div>
+
+        </div>
+
+        <div class="row y-gap-30 pt-10 sm:pt-20">
+
+        {% for hotel_category in hotel_categories %}
+          <div  class="col-lg-4 col-sm-6 hotel-category-section">
+            <a href="{{hotel_category.get_absolute_url}}" class="featureCard -type-6 -hover-image-scale">
+              <div class="featureCard__image -hover-image-scale__image rounded-12">
+                <img src="{{hotel_category.image.url}}" alt="image">
+              </div>
+
+              <div class="featureCard__content">
+                <h3 class="text-18 fw-600 text-white">{{hotel_category.title}}</h3>
+                <p class="text-white lh-16">{{hotel_category.sub_title}}</p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+
+        
+        </div>
+      </div>
+    </section>
+
+    <section class="layout-pt-lg layout-pb-xl home-about-section">
+      <div data-anim-wrap class="container">
+        <div class="row y-gap-20 justify-between">
+          <div  class="col-lg-6" style="position: relative;">
+            <!-- Image Container -->
+            <div style="position: relative;">
+              <!-- SVG Icon -->
+              {% comment %} <a href="https://www.youtube.com/watch?v=ANYfx4-jyqY" class="d-block js-gallery" data-gallery="gallery1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="30" cy="30" r="29" stroke="white" stroke-width="2" />
+                  <g clip-path="url(#clip0_79_4379)">
+                    <path d="M39.339 27.6922L27.5265 20.4107C26.6718 19.8846 25.6386 19.8627 24.7625 20.3522C23.8863 20.8416 23.3633 21.7331 23.3633 22.7366V37.2332C23.3633 38.7506 24.5859 39.9918 26.0887 40C26.0928 40 26.0969 40 26.1009 40C26.5705 40 27.0599 39.8528 27.517 39.5739C27.8847 39.3495 28.0009 38.8696 27.7765 38.502C27.5522 38.1342 27.0722 38.0181 26.7046 38.2424C26.4908 38.3728 26.282 38.4402 26.0971 38.4402C25.5301 38.4371 24.923 37.9514 24.923 37.2332V22.7367C24.923 22.3061 25.1474 21.9238 25.5232 21.7139C25.899 21.5039 26.3422 21.5133 26.7083 21.7387L38.5208 29.0202C38.8759 29.2388 39.0791 29.6033 39.0782 30.0202C39.0773 30.4371 38.8727 30.8008 38.5157 31.0187L29.9752 36.2479C29.6078 36.4728 29.4924 36.9529 29.7173 37.3202C29.9422 37.6876 30.4223 37.8031 30.7896 37.5781L39.3291 32.3495C40.1468 31.8507 40.636 30.9812 40.638 30.0234C40.64 29.0656 40.1542 28.1941 39.339 27.6922Z" fill="white" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_79_4379">
+                      <rect width="20" height="20" fill="white" transform="translate(22 20)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a> {% endcomment %}
+              <!-- Actual Image -->
+              <img src="{% static 'web/img/blogSingle/8.webp' %}" alt="" style="width: 100%; height: auto;">
+            </div>
+          </div>
+        
+          <div  class="col-lg-6">
+            <h2 class="text-30 fw-700">About Greenleaves Holiday Homes</h2>
+            <p class="mt-4">
+              Come fall in love with the impeccable hospitality and services of Green Leaves Holiday Homes, The meaning of the word "hospitality" is interwoven with all services provided, and the staff of our hotel promises to offer you an unforgettable accommodation experience.
+              <br><br>
+              Greenleaves holiday homes have a variety of hotels available to suit your mood and budget. Greenleave Apartment and Imperial Hotels are very close to many tourist destinations in Ooty. A little away from the hustle and bustle of the city, Green Casa is the best for your comfortable stay.
+              <br>
+              In the middle of the tea garden, green leaves countryside inn make your mind happy. With a distance of 8 km from Ooty, you can enjoy the sounds of birds while getting a break from the hustle and bustle of the city.
+            </p>
+        
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section  class="relative why-choose-section">
+      <div class="sectionBg -type-1 why-choose-section-img">
+        <div class="bg-accent-1-05 rounded-24"></div>
+        <img src="{% static 'web/img/about/3/1.webp'%}" alt="image" class="rounded-24">
+      </div>
+
+      <div class="container">
+        <div class="aboutSection -type-1 ">
+          <div class="row">
+            <div class="col-xl offset-xl-5 col-lg-7 offset-lg-5">
+              <div class="aboutSection__text">
+                <h2 class="text-30 md:text-24 fw-700">Why Choose Green Leaves</h2>
+                <p>Your Perfect Blend of Luxury, Nature, and Tranquility</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl offset-xl-2 col-lg-7 offset-lg-5">
+              <div class="row y-gap-30 featureIconSection">
+
+                <div class="col-xl-4 col-lg-6 col-sm-6 col-md-4">
+                  <div class="featureIcon -type-1 px-20 py-20 rounded-24 bg-white shadow-1">
+                    <div class="featureIcon__icon">
+                      <img src="{% static 'web/img/icons/1/nature.svg'%}" alt="icon">
+                    </div>
+
+                    <h3 class="featureIcon__title text-18 fw-500 mt-10 text-center">Luxurious Natural Retreat</h3>
+                    <p class="featureIcon__text mt-10 text-center">Luxury amidst serene beauty with modern amenities and elegant design.</p>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-sm-6 col-md-4">
+                  <div class="featureIcon -type-1 px-20 py-20 rounded-24 bg-white shadow-1">
+                    <div class="featureIcon__icon">
+                      <img src="{% static 'web/img/icons/1/service.svg'%}" alt="icon">
+                    </div>
+
+                    <h3 class="featureIcon__title text-18 fw-500 mt-10 text-center">Tailored Service Excellence</h3>
+                    <p class="featureIcon__text mt-10 text-center">Enjoy personalized service with every detail tailored to your preferences.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-sm-6 col-md-4">
+                  <div class="featureIcon -type-1 px-20 py-20 rounded-24 bg-white shadow-1">
+                    <div class="featureIcon__icon">
+                      <img src="{% static 'web/img/icons/1/dove.svg'%}" alt="icon">
+                    </div>
+
+                    <h3 class="featureIcon__title text-18 fw-500 mt-10 text-center">Peaceful Urban Escape</h3>
+                    <p class="featureIcon__text mt-10 text-center">Escape the city's hustle and find a tranquil retreat for ultimate relaxation.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout-pb-xl ">
+      <div data-anim-wrap class="container">
+        <div  class="row justify-between items-end y-gap-10">
+          <div class="col-auto">
+            <h2 class="text-30 mt-3">Discover Greenleaves Gallery</h2>
+          </div>
+
+          <div class="col-auto">
+
+            <button class="buttonArrow d-flex items-center ">
+              <a href="{% url 'web:image_gallery' %}">
+              <span>See all</span>
+              <i class="icon-arrow-top-right text-16 ml-10"></i>
+            </a>
+            </button>
+
+          </div>
+        </div>
+
+        <div class="grid -type-3 pt-40 sm:pt-20">
+          {% for image in gallery_images %}
+              <a href="{{ image.image.url }}"  class="featureCard -type-1 overflow-hidden rounded-12 px-30 py-30 -hover-image-scale js-gallery" >
+                  <div class="featureCard__image -hover-image-scale__image">
+                      <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                  </div>
+                  <div class="featureCard__content">
+                      <h4 class="text-white">
+                          {{ image.title }}
+                      </h4>
+                  </div>
+              </a>
+          {% endfor %}
+      </div>
+      </div>
+    </section>
+
+
+    <section  class="relative layout-pb-xl we-make-section">
+      <div class="relative xl:unset container">
+        <div class="layout-pt-xl layout-pb-xl rounded-12">
+          <div class="sectionBg">
+            <img src="{% static 'web/img/about/1/1.png' %}" alt="image" class="img-ratio rounded-12 md:rounded-0">
+          </div>
+
+          <div class="row y-gap-30 justify-center items-center">
+            <div class="col-lg-4 col-md-6">
+              <h2 class="text-40 lh-13">
+              We Make<br class="md:d-none">
+              Luxury Relaxing
+              </h2>
+
+              <p class="mt-10">A Perfect Blend of Luxury and Simplicity in Nature's Embrace</p>
+              <button class="button -md -dark-1 bg-accent-1 text-white mt-60 md:mt-30">
+                <a href="{% url "web:video_gallery" %}">
+                Explore Our Motion
+                <i class="icon-arrow-top-right ml-10"></i>
+                </a>
+              </button>
+            </div>
+
+            <div class="col-md-6 ">
+              <div class="featuresGrid">
+
+                <div class="featuresGrid__item px-20 py-20 text-center bg-white rounded-12">
+                  <img src="{% static 'web/img/icons/2/1.svg' %}" alt="icon">
+                  <div class="text-15 fw-900 text-accent-1 mt-10 lh-14 title-text">10+</div>
+                  <div class="sub-text">Total Apartments</div>
+                </div>
+
+                <div class="featuresGrid__item px-20 py-20 text-center bg-white rounded-12">
+                  <img src="{% static 'web/img/icons/2/2.svg' %}" alt="icon">
+                  <div class="text-15 fw-900 text-accent-1 mt-10 lh-14 title-text">1000+</div>
+                  <div class="sub-text">Happy Customers</div>
+                </div>
+
+                <div class="featuresGrid__item px-20 py-20 text-center bg-white rounded-12">
+                  <img src="{% static 'web/img/icons/2/3.svg' %}" alt="icon">
+                  <div class="text-15 fw-900 text-accent-1 mt-10 lh-14 title-text">7+</div>
+                  <div class="sub-text">Hotels</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section data-anim-wrap class="relative testimonial-section">
+      <div  class="container">
+        <div class="row justify-center text-center">
+          <div class="col-auto">
+            <h2 class="text-30 md:text-24">Customer Reviews</h2>
+          </div>
+        </div>
+
+        <div class="row justify-center  ">
+          <div class="col-xl-12 col-md-12 col-sm-12">
+            <div class="overflow-hidden js-section-slider" data-slider-cols="xl-1 lg-1 md-1 sm-1 base-1" data-pagination="js-testimonials-pagination">
+              <div class="swiper-wrapper">
+              {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                  <div class="testimonials -type-1 pt-10 text-center">
+
+                    <div class="text-18 fw-500 text-accent-1 ">"{{testimonial.title}}"</div>
+
+                    <div class="text-14 fw-500 mt-2">{{testimonial.content}}</div>
+
+                    <div class="mt-20 md:mt-40">
+                      <div class="lh-16 text-16 fw-500">{{testimonial.name}}</div>
+                      <div>
+                        
+                      <div class="lh-16">
+                        {% if testimonial.logo %}
+                        <img src="{{testimonial.logo.url}}" alt="Image" class="logo-image">
+                        {% endif %}
+                         {{testimonial.source}}</div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+              </div>
+
+              <div class="pagination -type-1 justify-center pt-60 md:pt-40 js-testimonials-pagination">
+                <div class="pagination__button"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout-pt-xl layout-pb-xl updates-section">
+      <div data-anim-wrap class="container">
+        <div  class="row justify-between items-end y-gap-10">
+          <div class="col-auto">
+            <h2 class="text-30 md:text-24">News & Updates</h2>
+          </div>
+
+          <div class="col-auto">
+
+            <button class="buttonArrow d-flex items-center ">
+              <a href="{% url 'web:update' %}">
+              <span>See all</span>
+              <i class="icon-arrow-top-right text-16 ml-10"></i>
+            </a>
+            </button>
+
+          </div>
+        </div>
+
+        <div  class="row y-gap-30 pt-40 sm:pt-20">
+
+          {% for update in updates %}
+          <div class="col-lg-4 col-md-6">
+            <a href="{{update.get_absolute_url}}" class="blogCard -type-1">
+              <div class="blogCard__image ratio ratio-41:30">
+                <img src="{{update.image.url}}" alt="image" class="img-ratio rounded-12">
+
+              </div>
+
+              <div class="blogCard__content mt-30">
+                <div class="blogCard__info text-14">
+                  <div class="lh-13">{{update.date}}</div>
+                  <div class="blogCard__line"></div>
+                  <div class="lh-13">{{update.auther}}</div>
+                </div>
+
+                <h3 class="blogCard__title text-18 fw-500 mt-10">{{update.title}}</h3>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+
+
+    {% include "web/partials/partners.html" %}
+
+
+    {% endblock  %}

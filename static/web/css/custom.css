@@ -1,0 +1,767 @@
+.tourSingleGrid__grid img {
+    border-radius: 12px !important;
+}
+
+.js-tabs-button {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 44px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.header.-type-2 .header__container,
+.header.-type-9 .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    height: 88px;
+}
+
+@media(max-width:991px) {
+
+    .header.-type-2 .header__container,
+    .header.-type-9 .header__container {
+        justify-content: space-between !important;
+    }
+
+    .faq-section .faq-btn {
+        text-align: -webkit-left !important;
+        font-size: 15px !important;
+    }
+
+}
+
+.blog-section img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown__menu.is-open {
+    display: block;
+}
+
+.dropdown__item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dropdown__item:hover {
+    background-color: #f0f0f0;
+}
+
+.custom-header {
+    padding-bottom: 110px !important;
+}
+
+.about-section img {
+    border-radius: 12px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 550px !important;
+}
+
+.hotel-category-section img {
+    height: 180px !important;
+    object-fit: cover !important;
+}
+
+.partner-section img {
+    height: 69px;
+    width: 100%;
+}
+
+.banner-section .hero__bg img {
+    width: 100% !important;
+    height: 845px !important;
+    object-fit: cover !important;
+}
+
+.hotel-detail-images img {
+    border-radius: 12px !important;
+}
+
+.space-slide img {
+    border-radius: 12px !important;
+}
+
+.mapTourSingle iframe {
+    border-radius: 12px !important;
+    border: 1px solid gray;
+}
+
+.overallRating__item {
+    background-color: rgb(92 235 43 / 4%) !important;
+}
+
+.overallRating__item:nth-child(1) {
+    background-color: rgb(49 217 61 / 10%) !important;
+}
+
+.amenity-tab .amenity-icon img {
+    height: 40px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* .space-image-slider {
+    padding-bottom: 200px !important;
+} */
+
+.vision-section img {
+    border-radius: 12px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 322px !important;
+}
+
+.partner-slider .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-slider img {
+    max-width: 100%;
+    height: 70px !important;
+    object-fit: contain;
+}
+
+select,
+input:not([type="range"]),
+textarea {
+    border: 0;
+    border-radius: 7px !important;
+    padding: 6px !important;
+    padding-left: 13px !important;
+    outline: none;
+    width: 100%;
+    background-color: #f1f1f1 !important;
+}
+
+@media(max-width:991px) {
+    .banner-section .hero__bg img {
+        height: 340px !important;
+    }
+}
+
+@media (max-width: 786px) {
+    .hero.-type-9 .hero__title {
+        font-size: 23px;
+    }
+
+    p {
+        font-size: 15px !important;
+    }
+
+    .text-18 {
+        font-size: var(--text-15) !important;
+    }
+
+    .text-20 {
+        font-size: var(--text-15) !important;
+    }
+
+    .text-30 {
+        font-size: var(--text-20) !important;
+    }
+
+    .text-40 {
+        font-size: var(--text-20) !important;
+    }
+
+    .booking-enquiry-form {
+        padding-top: 0px !important;
+        padding-bottom: 50px !important;
+    }
+
+    .tabs__button {
+        font-size: 15px !important;
+    }
+
+    .featureCard.-type-1 .featureCard__content h4 {
+        font-size: 15px !important;
+    }
+
+    .contact-location iframe {
+        height: 300px !important;
+    }
+
+    .layout-pt-xl {
+        padding-top: 20px !important;
+    }
+
+    .layout-pb-xl {
+        padding-bottom: 20px !important;
+    }
+
+    .aboutSection.-type-1 {
+        padding: 20px 0 !important;
+    }
+
+    .pageHeader.-type-2.-secondary {
+        padding-top: 60px !important;
+    }
+
+    .custom-header {
+        padding-bottom: 40px !important;
+    }
+
+    .about-section img {
+        height: 180px !important;
+    }
+
+    .button.-md {
+        padding: 12px 20px !important;
+    }
+
+    .contact-form-section {
+        padding-top: 90px !important;
+    }
+
+    .blog-section img {
+        height: 160px !important;
+    }
+
+    .overallRating__content {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .overallRating__item {
+        display: flex !important;
+    }
+
+    .featureCard.-type-2 .featureCard__content {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding-bottom: 20px !important;
+    }
+
+}
+
+.layout-pb-lg {
+    padding-bottom: 30px !important;
+}
+
+.layout-pb-xl {
+    padding-bottom: 50px !important;
+}
+
+.layout-pt-lg {
+    padding-top: 30px !important;
+}
+
+.layout-pt-xl {
+    padding-top: 50px !important;
+}
+
+.header .desktopNavSubnav__content {
+    min-width: 285px !important;
+}
+
+@media (max-width: 991px) {
+    .why-choose-section-img img {
+        object-fit: cover !important;
+        height: 240px !important;
+    }
+
+    .why-choose-section .featureIconSection .px-40 {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .why-choose-section .featureIconSection .py-40 {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .featuresGrid .featuresGrid__item {
+        height: 160px !important;
+    }
+
+    .featuresGrid .px-40 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .featuresGrid .py-40 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .booking-modal .modal-body img {
+        border-radius: 12px !important;
+        height: 78px !important;
+        object-fit: cover;
+        width: 100% !important;
+    }
+
+    .buttonArrow {
+        color: black !important;
+    }
+
+    .tabs.-tourSingle .tabs__controls .tabs__button {
+        opacity: 1.2 !important;
+        color: black !important;
+    }
+
+    .home-about-section img {
+        border-radius: 12px !important;
+    }
+
+    .button.-outline-white:hover {
+        color: #5A1206 !important;
+    }
+
+    .gallery-title {
+        top: 200px !important;
+        position: relative;
+    }
+}
+
+.fw-700,
+h2 {
+    font-weight: 500 !important;
+}
+
+@media (max-width: 767px) {
+    .footer.-type-1 .footer__main {
+        padding-top: 0px !important;
+    }
+}
+
+.button.-md {
+    padding: 5px 10px !important;
+}
+
+.booking-modal .modal-body {
+    font-size: 15px !important;
+}
+
+.booking-modal .modal-body input,
+.booking-modal .modal-body select {
+    border: rgb(179, 179, 179) solid 1px !important;
+    background: transparent !important;
+    font-size: 14px !important;
+}
+
+.headerDropdown .tabsMenu__container {
+    width: 910px !important;
+}
+
+.headerDropdown .tabsMenu__content {
+    padding: 15px 0;
+    padding-left: 50px !important;
+    padding-right: 40px !important;
+}
+
+.headerDropdown .tabs__button {
+    font-size: 18px !important;
+}
+
+.headerDropdown:hover {
+    border-radius: 100px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.booking-modal .modal.fade .modal-dialog {
+    animation-name: slideDown;
+    animation-duration: 0.5s;
+}
+
+.button:hover {
+    color: #5A1206 !important;
+}
+
+footer a:hover {
+    color: #5A1206 !important;
+}
+
+.headerDropdown .tabsMenu .tabsMenu-list__title {
+    font-weight: 600 !important;
+}
+
+.booking-modal .modal .button.-md {
+    padding: 5px 15px !important;
+}
+
+#fixedWhatsAppIcon {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 180px;
+    width: 50px;
+    height: 50px;
+    background-color: #69B505;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+#fixedWhatsAppIcon:hover {
+    background-color: #5A1206;
+}
+
+
+#fixedInstaIcon {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 240px;
+    width: 50px;
+    height: 50px;
+    background-color: #69B505;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+#fixedInstaIcon:hover {
+    background-color: #5A1206;
+}
+
+
+#fixedYtIcon {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 300px;
+    width: 50px;
+    height: 50px;
+    background-color: #69B505;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+#fixedYtIcon:hover {
+    background-color: #5A1206;
+}
+
+
+#fixedFbIcon {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 360px;
+    width: 50px;
+    height: 50px;
+    background-color: #69B505;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+#fixedFbIcon:hover {
+    background-color: #5A1206;
+}
+
+#fixedlinkedinIcon {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 420px;
+    width: 50px;
+    height: 50px;
+    background-color: #69B505;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+#fixedlinkedinIcon:hover {
+    background-color: #5A1206;
+}
+
+@media(min-width:991px) {
+    .home-about-section img {
+        border-radius: 12px !important;
+        object-fit: cover !important;
+        width: 100% !important;
+        height: 410px !important;
+    }
+
+    .booking-modal .modal-body img, .booking-modal .modal-body img{
+        border-radius: 12px !important;
+        height: 410px;
+        object-fit: cover;
+    }
+    .why-choose-section-img img {
+        height: 380px !important;
+    }
+
+
+}
+
+.arrow-icon {
+    font-size: 12px !important;
+}
+
+.headerDropdown__content {
+    display: none;
+}
+
+.headerDropdown__content.is-active {
+    display: block;
+}
+
+.headerDropdown .desktopNav__item:hover {
+    cursor: pointer !important;
+}
+
+
+.aboutSection.-type-1 {
+    padding: 60px 0 !important;
+}
+
+.featureIcon__icon {
+    height: 47px !important;
+    display: flex !important;
+    justify-content: center !important;
+
+}
+
+.we-make-section .sectionBg img {
+    height: 380px !important;
+}
+
+.we-make-section .featuresGrid__item img {
+    height: 40px !important;
+}
+
+.we-make-section .featuresGrid__item {
+    height: 140px !important;
+}
+
+.we-make-section .title-text {
+    font-weight: 700;
+    font-size: 19px !important;
+}
+
+.updates-section a:hover {
+    color: #5A1206 !important;
+}
+
+.testimonial-section .logo-image {
+    height: 25px !important;
+    object-fit: cover !important;
+}
+
+.button.-dark-1:hover {
+    background-color: #5A1206 !important;
+    border-color: #5A1206 !important;
+    color: white !important;
+}
+
+.button.-dark-1 a:hover {
+    color: white !important;
+}
+
+.amenity-tab .overallRating__icon img {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.tabs.-tourSingle .tabs__controls .tabs__button::after {
+    background-color: #69B505;
+}
+
+.tabs.-tourSingle .tabs__controls .tabs__button.is-tab-el-active {
+    color: #69B505 !important;
+}
+
+.tabs__button.js-tabs-button {
+    cursor: pointer !important;
+}
+
+@media (min-width: 767px) and (max-width: 1024px) {
+    .headerMobile__right {
+        display: flex;
+    }
+
+    .header.-type-9 .header__right {
+        display: none;
+    }
+
+    .hero.-type-9 .hero__title {
+        font-size: 30px;
+    }
+
+    .banner-section .hero__bg img {
+        height: 480px !important;
+    }
+
+    .banner-section .swiper-wrapper {
+        height: 415px;
+    }
+
+    .home-about-section img {
+        border-radius: 12px !important;
+    }
+
+    .we-make-section .featuresGrid {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 0;
+        gap: 7px;
+    }
+
+    .tourSingleSidebar {
+        width: 700px !important;
+    }
+
+    .we-make-section .featuresGrid .featuresGrid__item .sub-text {
+        font-size: 12px !important;
+    }
+
+    .sightseeing-section .tourCard__image img {
+        height: 250px !important;
+    }
+
+}
+
+.we-make-section .featuresGrid {
+    gap: 10px !important;
+}
+
+.bg-theme-color-2 {
+    background: #5A1206 !important;
+}
+
+.button.-outline-dark-1:hover {
+    background-color: #5A1206 !important;
+}
+
+.PartnershipModal input,
+.PartnershipModal textarea,
+.PartnershipModal select {
+    font-size: 14px !important;
+    color: black !important;
+    font-weight: 400;
+}
+
+.blogCard__image {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s !important;
+    border-radius: 12px !important;
+    font-weight: 600;
+}
+
+.gallery-title {
+    top: 240px;
+    position: relative;
+}
+
+.blogCard__image:hover .overlay-div {
+    opacity: 1;
+}
+
+.hover-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+}
+
+.blogCard__image:hover+.hover-title,
+.hover-title:hover {
+    opacity: 1;
+}
+.nav-color{
+    color: #69B505 !important;
+}
+.tabs.-tourSingle .tabs__controls .tabs__button {
+    opacity: 1.2 !important;
+    color: black !important;
+}
+
+
+@media (min-width: 991px) {
+    .pt-80{
+        padding-top: 80px !important;
+    }
+  }
+
+
+.booking-modal{
+    padding: 6px 10px !important;
+}
+
+.policy li {
+    list-style: disc !important;
+    padding: 0;
+    margin: 0;
+}
+
+.bg-theme-color-2 {
+    background: #5A1206 !important;
+    cursor: pointer;
+}

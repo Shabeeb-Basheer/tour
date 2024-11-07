@@ -1,0 +1,22 @@
+{% load static %}
+<section class="layout-pt-lg layout-pb-xl partner-section">
+  <div class="container">
+    <div class="row justify-center text-center">
+      <div class="col-auto">
+        <h2 class="text-30">Discover More Greenleaves Retreats</h2>
+      </div>
+    </div>
+
+    <div class="swiper-container partner-slider pt-50 sm:pt-20">
+      <div class="swiper-wrapper">
+        {% for partner in partners %}
+        <div class="swiper-slide">
+          <a href="{{partner.get_hotel_detail_url }}">
+          <img src="{{partner.image.url}}" alt="Partner Logo">
+        </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

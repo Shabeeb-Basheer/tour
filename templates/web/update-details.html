@@ -1,0 +1,51 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+<section  class="pageHeader -type-2 -secondary custom-header">
+  <div class="pageHeader__bg">
+    <img src="{% static 'web/img/pageHeader/pageHeader-1.webp'%}" alt="image">
+  </div>
+
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12">
+        <div class="pageHeader__content">
+          <h1 class="pageHeader__title text-white">
+            Update Detail
+          </h1>
+
+          <p class="pageHeader__text text-white">
+            A tropical paradise made for animal lovers replete with monkey caves, dog foundations, and dolphins in the wild.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="layout-pt-md layout-pb-xl blog-section">
+      <div class="container">
+        <div class="row y-gap-30 pt-20 ">
+            <div class="col-md-12 collg-12">
+              <img src="{{update.image.url}}" alt="image" class="rounded-8">
+                </div>
+          </div>
+        <div class="row y-gap-30 justify-center">
+        
+          <div class="col-lg-12">
+            <h2 class="text-30 md:text-24">{{update.title}}</h2>
+            <p class="mt-20">{{update.description}}</p>
+            <div class="row y-gap-15 justify-between items-center pt-20">
+      
+
+            </div>
+
+            <div class="line mt-60 mb-30"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   {% endblock %}

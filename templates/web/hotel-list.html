@@ -1,0 +1,229 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+<section  class="pageHeader -type-2 -secondary custom-header">
+  <div class="pageHeader__bg">
+    <img src="{% static 'web/img/pageHeader/pageHeader-1.webp'%}" alt="image">
+  </div>
+
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12">
+        <div class="pageHeader__content">
+          <h1 class="pageHeader__title text-white">
+            Hotel list
+          </h1>
+
+          <p class="pageHeader__text text-white">
+            Find Your Oasis: Luxurious Holiday Homes for Your Perfect Getaway.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if hotels %}
+  <section class="layout-pt-lg layout-pb-xl hotel-list-section">
+    <div data-anim-wrap class="container">
+      <div class="row y-gap-30 pt-30">
+        {% for hotel in hotels %}
+          <div  class="col-lg-3 col-sm-6">
+            <a href="{{ hotel.get_absolute_url }}" class="tourCard -type-1 py-10 px-10 border-1 rounded-12 -hover-shadow">
+              <div class="tourCard__header">
+                <div class="tourCard__image ratio ratio-28:20">
+                  <img src="{{ hotel.image.url }}" alt="image" class="img-ratio rounded-12" />
+                </div>
+
+                {% comment %} <button class="tourCard__favorite"><i class="icon-heart"></i></button> {% endcomment %}
+              </div>
+
+              <div class="tourCard__content px-10 pt-10">
+                <div class="tourCard__location d-flex items-center text-13 text-light-2">
+                  <i class="icon-pin d-flex text-16 text-light-2 mr-5"></i>
+                  {{ hotel.place }}
+                </div>
+
+                <h3 class="tourCard__title text-16 fw-500 mt-5"><span>{{ hotel.title }}</span></h3>
+
+                {% comment %} <div class="tourCard__rating d-flex items-center text-13 mt-5">
+                  <div class="d-flex x-gap-5">
+                    <div>
+                      <i class="icon-star text-10 text-yellow-2"></i>
+                    </div>
+
+                    <div>
+                      <i class="icon-star text-10 text-yellow-2"></i>
+                    </div>
+
+                    <div>
+                      <i class="icon-star text-10 text-yellow-2"></i>
+                    </div>
+
+                    <div>
+                      <i class="icon-star text-10 text-yellow-2"></i>
+                    </div>
+
+                    <div>
+                      <i class="icon-star text-10 text-yellow-2"></i>
+                    </div>
+                  </div>
+
+                  <span class="text-dark-1 ml-10">4.8 (269)</span>
+                </div> {% endcomment %}
+
+                <div class="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10">
+                  {% comment %} <div class="d-flex items-center">
+                    <i class="icon-clock text-16 mr-5"></i>
+                    4 days
+                  </div> {% endcomment %}
+
+                  <div>
+                    From <span class="text-16 fw-500 ">₹{{ hotel.price }}</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% else %}
+  <section class="layout-pt-xl layout-pb-xl">
+    <div data-anim-wrap class="container">
+      <div  class="row y-gap-10 justify-between items-end y-gap-10">
+        <div class="col-12">
+          <h1 class="text-30 text-center">Coming Soon</h1>
+        </div>
+
+        
+      </div>
+      <div  class="row pt-40 md:pt-20">
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if near_places %}
+  <section class="layout-pt-xl layout-pb-xl sightseeing-section">
+    <div data-anim-wrap class="container">
+      <div class="row y-gap-10 justify-between items-end y-gap-10">
+        <div class="col-auto">
+          <h2 class="text-30">Explore all sightseeing places</h2>
+        </div>
+
+        <div class="col-auto">
+
+          <button class="buttonArrow d-flex items-center ">
+            <a href="{% url "web:sightseeing_place" %}">
+            <span>See all</span>
+            <i class="icon-arrow-top-right text-16 ml-10"></i>
+          </a>
+          </button>
+
+        </div>
+      </div>
+
+      <div  class="row pt-40 md:pt-20">
+
+        <div class="col-xl-12 col-lg-12 col-sm-12">
+          <div class="row y-gap-30 ">
+          {% for near_place in near_places %}
+            <div class="col-12">
+
+              <div class="tourCard -type-2">
+                <div class="tourCard__image">
+                  <img src="{{near_place.image.url}}" alt="image">
+                </div>
+
+                <div class="tourCard__content">
+                  <div class="tourCard__location">
+                    <i class="icon-pin"></i>
+                   {{near_place.place}}
+                  </div>
+
+                  <h3 class="tourCard__title mt-5">
+                    <span>{{near_place.title}}</span>
+                  </h3>
+
+                  {% comment %} <div class="d-flex items-center mt-5">
+                    <div class="d-flex items-center x-gap-5">
+
+                      <i class="icon-star text-yellow-2 text-12"></i>
+
+                      <i class="icon-star text-yellow-2 text-12"></i>
+
+                      <i class="icon-star text-yellow-2 text-12"></i>
+
+                      <i class="icon-star text-yellow-2 text-12"></i>
+
+                      <i class="icon-star text-yellow-2 text-12"></i>
+
+                    </div>
+
+                    <div class="text-14 ml-10"><span class="fw-500">4.8</span> (269)</div>
+                  </div> {% endcomment %}
+
+                  <p class="tourCard__text mt-5">
+                   {{near_place.sub_title}}
+                  </p>
+
+                  <div class="row x-gap-20 y-gap-5 pt-30">
+                    <div class="col-auto">
+                      <div class="text-14 text-accent-1">
+                        <i class="icon-price-tag mr-10"></i>
+                       {{near_place.point_1}}
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="text-14">
+                        <i class="icon-check mr-10"></i>
+                        {{near_place.point_2}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tourCard__info">
+                  <div>
+                    <div class="d-flex items-center text-14">
+                      <i class="icon-clock mr-10"></i>
+                      {{near_place.kilometer}}
+                    </div>
+                    {% if near_place.price %}
+                    <div class="tourCard__price">
+                      <div>₹{{near_place.price}}</div>
+
+                      <div class="d-flex items-center">
+                        From <span class="text-20 fw-500 ml-5">₹{{near_place.offer_price}}</span>
+                      </div>
+                    </div>
+                    {% endif %}
+                  </div>
+                  <button class="button -outline-accent-1 text-accent-1">
+                <a href="{{near_place.location}}" target="_blank">
+
+                    View Map
+                    <i class="icon-arrow-top-right ml-10"></i>
+                </a>
+
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          {% endfor %}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+
+
+{% endblock %}

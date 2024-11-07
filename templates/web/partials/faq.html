@@ -1,0 +1,27 @@
+{% load static %}
+<div class="row justify-center pt-30">
+    <div class="col-xl-8 col-lg-10">
+      <div class="accordion -simple row y-gap-20 js-accordion">
+        {% for faq in faqs %}
+        <div class="col-12">
+          <div class="accordion__item px-20 py-15 border-1 rounded-12">
+            <div class="accordion__button d-flex items-center justify-between">
+              <div class="button text-16 text-dark-1">{{faq.question}}</div>
+
+              <div class="accordion__icon size-30 flex-center bg-light-2 rounded-full">
+                <i class="icon-plus"></i>
+                <i class="icon-minus"></i>
+              </div>
+            </div>
+
+            <div class="accordion__content">
+              <div class="pt-20">
+                <p>{{faq.answer}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
